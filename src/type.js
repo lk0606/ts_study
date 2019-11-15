@@ -10,7 +10,7 @@ let tuple = [1, '1'];
 // console.log(tuple, 'tuple')
 // tuple[0]
 // 函数
-let add = (x, y) => x + y;
+// let add = (x:number, y: number) => x + y
 let compute;
 compute = (a, b) => a + b;
 // 对象

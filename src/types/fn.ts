@@ -5,7 +5,7 @@ function sum1(x: number, y: number): number {
 }
 // let sum2: (x: number, y:number) => number
 
-// 类型别名 为函数去个名字
+// 类型别名 为函数取个名字
 type Sum3 = (x: number, y: number)=> number
 let sum3: Add = (a, b) => a + b
 
