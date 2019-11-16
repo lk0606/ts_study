@@ -13,7 +13,7 @@
  * 2. 接口继承类，相当于接口把类的成员抽象了出来
  * 3. 接口抽离类成员时，不仅抽离了public 而且抽离了 private protected
  * 抽象？
- * 只有类的成员，而没有类的实现，详见 ./abstract.ts
+ * 只有类的成员，而没有类的实现，详见 ./11.abstract.ts
  */
 interface Human {
     // new (name: string): void // err 接口不能约束类的构造函数

@@ -1,5 +1,5 @@
 
-function isLessAppVersion(version: string, appName?: string) {
+function isLessAppVersion(version: string, appName?: string): boolean {
     appName = appName ? appName : 'WeiYi'
     if(!/(\d+(\.(\d{1,2})+){2})/.test(version)) throw new Error('版本号格式不对，正确版本号如：1.0.0，1.01.01')
     const u = navigator.userAgent
