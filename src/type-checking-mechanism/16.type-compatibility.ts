@@ -58,3 +58,126 @@ let c16 = (...args: number[]) => {}
 // b16 = a16 // 讲道理应该是err，但是我的没报错啊 兼容性2
 c16 = a16 // 兼容性2
 c16 = b16 // 兼容性2
+
+/**
+ * 2. 参数类型
+ * 兼容性
+ * 1. 类型兼容
+ * 2. 对象类型兼容
+ * 函数参数可以相互赋值的方式叫做函数参数的双向协变，可以将精确的类型赋值给不那么精确的类型
+ */
+let handle16 = (a: string) => {}
+// hof(handle16) // type number in not assignable string
+
+
+interface Point3D {
+    x: number
+    y: number
+    z: number
+}
+
+interface Point2D {
+    x: number
+    y: number
+
+}
+
+let p3d = (point: Point3D) => {}
+let p2d = (point: Point2D) => {}
+
+// p3d = p2d
+// p2d = p3d // error "strictFunctionTypes": true,
+
+/**
+ * 3. 返回值类型
+ * 目标函数和愿函数的返回值类型相同或为其字类型
+ */
+let f16 = () => ({name: 'Alice'})
+let g16 = () => ({name: 'Alice', location: 'Beijing'})
+
+f16 = g16
+
+// g16 = f16 // 多的不能赋值给少的
+
+// 函数重载
+function overLoad(a: number, b:number): number
+function overLoad(a: string, b: string): string
+function overLoad(a: any, b: any): any{}
+
+
+/**
+ * 枚举类型兼容
+ * 1. 枚举和数值类型是完全兼容的
+ * 2. 枚举类型完全不兼容
+ */
+enum Fruit {
+    Apple,
+    Banana
+}
+enum Color {
+    Red,
+    Yellow
+}
+let fruit: Fruit.Apple = 3
+let no16: number = Fruit.Apple
+// let color16: Color.Red = Fruit.Apple // err 2
+
+/**
+ * 类兼容 和接口类型
+ * 1. 静态成员和构造函数不参与比较，
+ * 2. 如果两个类具备完全相同的实例成员，那么实例完全兼容
+ * 3. 私有成员则不兼容，只有父类和子类是兼容的
+ */
+
+class AA16 {
+    constructor(p: number, q: number) {}
+    id: number
+    private name: string = ''
+}
+class BB16 {
+    static s = 1
+    constructor(p: number) {}
+    id: number
+    private name: string = ''
+}
+
+let aa16 = new AA16(1, 2)
+let bb16 = new BB16(1)
+// aa16 = bb16
+// bb16 = aa16
+class CC16 extends AA16 {}
+let cc16 = new CC16(1, 2)
+aa16 = cc16
+cc16 = aa16 // success 3
+
+/**
+ * 范型兼容
+ * 1. 只有接口类型参数T只有在被接口成员使用时，才会影响兼容性
+ * 范型函数
+ * 1. 两个范型函数定义相同，没有指定类型参数，那么兼容！
+ */
+interface Empty16<T> {
+    value: T
+}
+let obj1: Empty16<number> = { value: 1 }
+let obj2: Empty16<string> = { value: '1' }
+// obj1 = obj2 // err 1
+
+let log1 = <T>(x: T): T => {
+    console.log('x')
+    return x
+}
+let log2 = <U>(y: U): U => {
+    console.log('y')
+    return y
+}
+
+log1 = log2 // success 范型函数1
+
+/**
+ * 口诀吧
+ * 当一个类型Y可以被赋值给另一个类型X时，我们可以说类型X兼容类型Y
+ * X兼容Y：X（目标类型） = Y（源类型）
+ * 结构之间兼容：成员少的兼容成员多的
+ * 函数之间兼容：参数多的兼容参数少的
+ */
