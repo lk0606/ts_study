@@ -9,5 +9,13 @@
 // import './chapter1/type-checking-mechanism/18. advanced-cross-union.ts'
 // import './chapter1/type-checking-mechanism/19. index-type.ts'
 
+
+// import * as val from './chapter2/es6/exports'
+// let val = require('./chapter2/node/exports.ts')
+// console.log(val)
+
+
+
 let hello: string = 'hello tsc'
 document.querySelectorAll('.app')[0].innerHTML = hello
+
