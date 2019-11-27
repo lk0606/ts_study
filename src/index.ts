@@ -8,13 +8,9 @@
 // import './chapter1/type-checking-mechanism/15.1.type-inference.ts'
 // import './chapter1/type-checking-mechanism/18. advanced-cross-union.ts'
 // import './chapter1/type-checking-mechanism/19. index-type.ts'
-
-
-// import * as val from './chapter2/es6/exports'
-// let val = require('./chapter2/node/exports.ts')
-// console.log(val)
-
-
+// import './chapter2/4.declare/global-lib.js'
+globalLib({x: 1})
+// globalLib.doSomething()
 
 let hello: string = 'hello tsc'
 document.querySelectorAll('.app')[0].innerHTML = hello
