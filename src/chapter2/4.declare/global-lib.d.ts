@@ -8,3 +8,4 @@ declare namespace globalLib {
         [key: string]: any
     }
 }
+
