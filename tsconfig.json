@@ -6,7 +6,7 @@
     // 编译器需要编译的文件或目录 支持通配符 一级 src/* 二级 src/*/*
     // 注意 files和include是会合并的，取并集
 //    "include": [
-//        "src/*/*"
+//        "src"
 //    ],
     /*
     编译器需要排除的，与 include 相反 默认排除 node_modules 及声明文件 即 d.ts
@@ -17,11 +17,35 @@
     files 权重大于 exclude
     */
 //    "exclude": [
-//        "src/lib/index.ts"
-//    ]
+//        "src/*/*"
+//    ],
     /*
     本文件中的权重最高，覆盖 extends
     */
     "extends": "./tsconfig.base",
-    "compileOnSave": true // 保存时自动编译，可惜只有 atom装插件才支持 好糗
+//    "compileOnSave": true, // 保存时自动编译，可惜只有 atom装插件才支持 好糗
+    "compilerOptions": {
+//        "incremental": true, // 增量编译 ts在第一次编译后可以生成一个可以存储编译信息的文件，二次编译时根据文件做增量编译，可以提升编译速度，其实就相当于做了缓存呗
+//        "tsBuildInfoFile": "./tsBuildInfoFile", // 增量编译文件位置 可以自定义 没必要指定，默认挺好的
+//        "diagnostics": true, // 打开诊断信息
+
+
+//        "target": "es5", // 目标语言版本
+//        "module": "amd", // 生成代码模块标准
+//        "outFile": "./app.js", // 将多个相互依赖的文件生成一个文件，可以用在AMD中，一般也使用在AMD模块中
+//        "lib": [
+//            "dom",
+//            "es5",
+//            "scripthost",
+//            "es2019.array"
+//        ], // ts需要引用的库，即声明文件， es5 默认 "dom", "es5", "scripthost" 宿主环境相关api 比如 activeX 控件 要在ts中使用高级版本特性，则要使用到此参数 比如es2019
+
+
+//        "allowJs": true, // 允许编译 js 文件 [js, jsx]
+//        "checkJs": true, // 允许在 js 文件 中 报错，常与 allowJs 配置配合使用
+//        "outDir": "./out", // 指定输出目录 编译的js文件指定目录
+//        "rootDir": "./", // 指定输入文件目录（用于控制输出文件目录结构） 默认当前目录
+
+
+    }
 }

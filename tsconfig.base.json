@@ -1,11 +1,9 @@
 {
-    "files": [
-        "src/lib/index.ts"
-    ],
     "include": [
-        "src/*/*"
+        "src"
     ],
     "exclude": [
-        "src/lib/index.ts"
-    ]
+        "src/*/*",
+        "src/index.ts"
+    ],
 }
