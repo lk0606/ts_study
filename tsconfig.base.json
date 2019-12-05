@@ -1,0 +1,11 @@
+{
+    "files": [
+        "src/lib/index.ts"
+    ],
+    "include": [
+        "src/*/*"
+    ],
+    "exclude": [
+        "src/lib/index.ts"
+    ]
+}
