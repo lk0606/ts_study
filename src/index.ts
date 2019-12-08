@@ -3,8 +3,6 @@
 // import a = require('amd');
 
 
-
-
 let hello: string = 'hello tsc'
 document.querySelectorAll('.app')[0].innerHTML = hello
 
@@ -14,3 +12,18 @@ document.querySelectorAll('.app')[0].innerHTML = hello
  * es2019
  */
 // console.log([1, 2, [3, 4]].flat())
+
+/**
+ * noImplicitThis
+ */
+// class C {
+//     a: number = 1
+//     getA() {
+//         return function () {
+//             console.log(this.a)
+//         }
+//     }
+// }
+//
+// let c = new C().getA()
+// c()

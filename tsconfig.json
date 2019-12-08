@@ -47,5 +47,52 @@
 //        "rootDir": "./", // 指定输入文件目录（用于控制输出文件目录结构） 默认当前目录
 
 
+//        "declaration": true, // s生成声明文件 匹配到的 include exclude
+//        "declarationDir": "./d", // 声明文件路径
+//        "emitDeclarationOnly": true, // 只生成声明文件
+
+//        "sourceMap": true, // 生成sourceMap文件 同匹配到的
+//        "inlineSourceMap": true, // 生成 sourceMap 文件和目标文件在一个文件
+
+//        "declarationMap": true, // 为声明文件生成 sourceMap
+
+//        "typeRoots": [], // 控制声明文件目录 默认 node_modules/@types 下的所有声明文件
+//        "types": [], // 指定需要加载的声明文件的包，如果指定了某一个包，那么只会加载这个包的文件
+
+//        "removeComments": true, // 删除注释
+
+//        "noEmit": true, // 不输出任何文件 tsc无反应 什么也不做
+//        "noEmitOnError": true, // 发生错误是不输出任何文件
+
+//        "noEmitHelpers": true, // 不生成 helper 函数， 涉及类的继承 helpers（依赖库）
+//        "importHelpers": true, // 通过 tslib 引入 helper 函数，文件必须是模块 代替以往 额外安装 ts-helpers
+
+//        "downlevelIteration": true, // 降级遍历器的实现（es3/5）
+
+//        "strict": true, // 开启所有严格类型检查 如开启，以下未空格部分都是 true
+//        "alwaysStrict": true, // 在代码中注入 strict
+//        "noImplicitAny": true, // 允许隐式 any 类型 必须要有类型注解
+//        "strictNullChecks": true, // 允许 null, undefined 赋值给其他变量
+//        "strictFunctionTypes": true, // 不允许函数参数的双向协变
+//        "strictPropertyInitialization": true, // 类的实例属性必须初始化
+//        "strictBindCallApply": true, // 严格的 call/bind/apply 检查
+//        "noImplicitThis": true, // 不允许 this 有 隐式 any 类型
+
+//        "noUnusedLocals": true, // 检查只声明，未使用的局部变量
+//        "noUnusedParameters": true, // 检查未使用的函数参数
+//        "noFallthroughCasesInSwitch": true, // 防止 switch 语句贯穿
+//        "noImplicitReturns": true, // 每个分支都要有返回值
+
+//        "esModuleInterop": true, // 允许 export = 导出，由 import form 倒入 也可用 import = 方式倒入
+//        "allowUmdGlobalAccess": true, // 允许模块中访问 umd 全局变量
+//        "moduleResolution": "node", // 模块解析策略
+//        "baseUrl": "./", // 解析非相对模块的基地址 默认当前目录
+//        "paths": { // 路径映射 相对于 baseUrl
+//            "jquery": ["node_modules/jquery/dist/jquery.min.js"]
+//        },
+//        "rootDirs": ["src", "out"], // 将多个目录放在一个虚拟目录下，用于运行时 编译前不在一个文件，编译后根据配置在一个文件，设置此选项使编辑器通过
+
+//        "listEmittedFiles": true, // 打印输出文件
+//        "listFiles": true // 打印编译的文件（包括引用的声明文件）
     }
 }
