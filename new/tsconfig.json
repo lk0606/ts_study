@@ -3,7 +3,7 @@
     "target": "es5",
     "module": "commonjs",
     "strict": true,
-    "composite": true,
-    "declaration": true
+    "composite": true, // 工程可以被引用，并可被增量编译
+    "declaration": true // 生成声明文件
   }
 }
