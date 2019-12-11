@@ -45,5 +45,6 @@ import $ from 'jquery'
 $('.app').css('color', 'red')
 
 let hello: string = 'hello tsc'
+// hello = 1
 document.querySelectorAll('.app')[0].innerHTML = hello
 
