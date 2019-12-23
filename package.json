@@ -6,6 +6,7 @@
   "scripts": {
     "build": "babel src --out-dir dist --extensions \".ts,.tsx\"",
     "type-check": "tsc --watch",
+    "lint": "eslint src --ext .js,.ts",
     "test": "jest"
   },
   "keywords": [
@@ -24,7 +25,11 @@
     "@types/jest": "^24.0.15",
     "@types/node": "^12.7.2",
     "babel-jest": "^24.8.0",
+    "typescript": "^3.5.2",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "eslint": "^5.16.0",
     "jest": "^24.8.0",
-    "typescript": "^3.5.2"
+    "ts-jest": "^24.0.2"
   }
 }

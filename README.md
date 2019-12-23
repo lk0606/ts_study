@@ -18,3 +18,47 @@ typescript study
 - 两种工具不要混用，只会增加工程复杂度 
 
 ### 作业？ 使用 `webpack` 起一个开发环境？ 起一个 `server`
+
+### eslint 依赖
+> package.json
+
+```json
+{
+"devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "eslint": "^5.16.0"
+  }
+}
+```
+> eslintrc.json
+
+```js
+module.exports = {
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "parserOptions": {
+        "project": "./tsconfig.json" // 利用类型信息
+    },
+    "extends": [
+        "plugin:@typescript-eslint/recommended", // 官方推荐规则
+    ],
+    "rules": {
+        "@typescript-eslint/no-inferrable-types": "off", // 关闭类型推断
+    }
+}
+```
+
+### jest
+> facebook 推出的单元测试工具
+
+> package.json
+
+```json
+{
+"devDependencies": {
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2"
+  }
+}
+```
