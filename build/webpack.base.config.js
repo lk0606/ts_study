@@ -20,7 +20,7 @@ module.exports = {
                     // loader: 'ts-loader',
                     loader: 'awesome-typescript-loader',
                     options: {
-                        /**
+                         /**
                          * 默认值是 false，开启表示只做语言转换，不做类型检查
                          * 开启缺点，不做类型检查 优点：提升打包速度
                          * 针对缺点使用以下插件
