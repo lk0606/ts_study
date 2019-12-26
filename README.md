@@ -10,7 +10,7 @@ typescript study
 ```
 
 ### 注意事项
-- 四种语法 `babel` 是无法编译的，详见 `index.ts`
+- 四种语法 `babel` 是无法编译的，详见 `index.tsx`
 
 ### 编译工具
 - 没使用过 `babel` ，全新工程，首选 `ts` 自身编译器，`ts-loader`
